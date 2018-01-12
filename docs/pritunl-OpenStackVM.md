@@ -3,7 +3,7 @@
 ### Mục tiêu LAB
 - Mô hình này sử dụng 2 máy ảo trong OpenStack (cùng tenant), trong đó:
   - VM Pritunl đóng vai trò VPN Server.
-  - VM Client
+  - VM Target
 Bài lab thành công khi máy remote quay VPN thành công và ping được tới dải VM Client (dải Private) trong tenant.
 
 ## Mô hình 
@@ -72,24 +72,29 @@ Bài lab thành công khi máy remote quay VPN thành công và ping được t�
   ![img](../images/openstack_pritunel/2.jpg)
 
   - Đăng nhập sử dụng mật khẩu mặc định "pritunl/pritunl"
+
   ![img](../images/openstack_pritunel/3.jpg)
 
   - Khai báo các thông tin:
     + Tài khoản đăng nhập
     + Public address
     + Web console port
+
   ![img](../images/openstack_pritunel/4.jpg)  
 
   - Vào mục "Users", chọn "Add organization", đặt tên cho Organization
+
   ![img](../images/openstack_pritunel/5.jpg) 
 
   - Sau khi tạo Organization, lựa chọn "Add user"
+
   ![img](../images/openstack_pritunel/6.jpg) 
 
   - Chuyển sang mục "Servers", chọn "Add Server", khai báo các thông tin cho Server:
     + Tên Server
     + Port và giao thức truy cập
     + Virtual network: đây là dải mạng để NAT các dải Private network tới Remote host.
+    
   ![img](../images/openstack_pritunel/7.jpg)
 
   - Sau khi add xong Server, tiếp tục chọn mục "Attach Organization"
